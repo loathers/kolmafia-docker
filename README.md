@@ -1,9 +1,14 @@
 # kolmafia-docker
 Run KoLMafia in a container and access via a web interface
 
-Based off of https://www.linuxserver.io/blog/2021-05-05-meet-webtops-a-linux-desktop-environment-in-your-browser
+```
+docker run -p 3000:3000 -p 60080:60080 -v /local_path_to_kolmafia_dir:/config/.kolmafia ghcr.io/loathers/kolmafia-docker
+```
 
-Please see https://hub.docker.com/r/linuxserver/webtop for docker usage until this README is updated.
+* http://localhost:3000
+* http://localhost:60080/game.php
+
+Please see https://github.com/linuxserver/docker-baseimage-kasmvnc for additional docker usage.
 
 ## Known Issues
-* The KoLMafia window will be unable to be reopened if you close it, requiring a restart of the container.
+* Relay browser will not automatically open a browser window, right click desktop and select 'browser'

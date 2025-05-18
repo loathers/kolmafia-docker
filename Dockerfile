@@ -15,7 +15,7 @@ COPY root/ /
 
 # environment variables
 ## fullscreen does not work well with kolmafia
-ENV NO_FULL 1
+ENV NO_FULL=1
 
 # ports
 ## kolmafia relay browser port
