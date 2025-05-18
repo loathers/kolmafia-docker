@@ -1,21 +1,26 @@
-FROM ghcr.io/linuxserver/baseimage-rdesktop-web:alpine
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine321
 
 # install packages
 RUN \
   apk add --no-cache \
-    openjdk17 \
+    chromium \
+    openjdk21 \
     jq \
     wget \
     && \
-    rm -rf \
-    /tmp/*
+    rm -rf /tmp/*
 
 # add local files
-COPY 99-install-kolmafia /etc/cont-init.d/99-install-kolmafia
+COPY root/ /
 
-# set application to lauch when accessing the web interface :3000
-RUN echo 'cd /kolmafia && java -DuseCWDasROOT=true -jar /etc/kolmafia/kolmafia.jar' > /defaults/autostart
+# environment variables
+## fullscreen does not work well with kolmafia
+ENV NO_FULL 1
 
-# ports and volumes
+# ports
+## kolmafia relay browser port
 EXPOSE 60080
-VOLUME [ "/kolmafia" ]
+
+# volumes
+## kolmafia user directory
+VOLUME [ "/config/.kolmafia" ]
