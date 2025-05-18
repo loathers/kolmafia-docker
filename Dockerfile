@@ -1,4 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine321
+LABEL org.opencontainers.image.authors="rinn"
 
 # install packages
 RUN \
