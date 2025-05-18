@@ -1,7 +1,7 @@
-#!/usr/bin/with-contenv bash
+#!/bin/bash
 
 mkdir -p /etc/kolmafia
-cd /etc/kolmafia
+pushd /etc/kolmafia || exit
 
 echo Downloading latest build of KoLmafia...
 MAFIA_RELEASE=$(curl --fail --silent --globoff 'https://api.github.com/repos/kolmafia/kolmafia/releases/latest' | jq --raw-output '.assets[] | select(.browser_download_url | contains(".jar")).browser_download_url')
@@ -11,14 +11,16 @@ if [[ -z "$MAFIA_RELEASE" ]]; then
 fi
 wget -N "$MAFIA_RELEASE"
 
-latest=$(ls -dt KoLmafia-*.jar | head -1)
-oldest=$(ls -td KoLmafia-*.jar | awk 'NR>5')
+latest=$(find ./KoLmafia-*.jar | head -1)
+oldest=$(find ./KoLmafia-*.jar | awk 'NR>5')
 
 if [ -n "$oldest" ]; then
 	echo Removing old KoLmafia jar files...
-	rm ${oldest}
+	rm "${oldest}"
 fi
 
-echo Linking kolmafia.jar from ${latest}...
+echo Linking kolmafia.jar from "${latest}"...
 if [ -f "kolmafia.jar" ]; then rm kolmafia.jar; fi
-ln -s ${latest} kolmafia.jar
+ln -s "${latest}" kolmafia.jar
+
+popd || exit
