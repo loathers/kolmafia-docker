@@ -9,7 +9,8 @@ RUN \
     jq \
     wget \
     && \
-    rm -rf /tmp/*
+    rm -rf /tmp/* /var/cache/apk/*
+
 
 # add local files
 COPY root/ /
