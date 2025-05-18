@@ -6,8 +6,8 @@ pushd /etc/kolmafia || exit
 echo Downloading latest build of KoLmafia...
 MAFIA_RELEASE=$(curl --fail --silent --globoff 'https://api.github.com/repos/kolmafia/kolmafia/releases/latest' | jq --raw-output '.assets[] | select(.browser_download_url | contains(".jar")).browser_download_url')
 if [[ -z "$MAFIA_RELEASE" ]]; then
- 	echo "ERROR: Could not determine latest mafia release from GitHub!"
- 	exit 1
+    echo "ERROR: Could not determine latest mafia release from GitHub!"
+    exit 1
 fi
 wget -N "$MAFIA_RELEASE"
 
@@ -15,8 +15,8 @@ latest=$(find ./KoLmafia-*.jar | head -1)
 oldest=$(find ./KoLmafia-*.jar | awk 'NR>5')
 
 if [ -n "$oldest" ]; then
-	echo Removing old KoLmafia jar files...
-	rm "${oldest}"
+    echo Removing old KoLmafia jar files...
+    rm "${oldest}"
 fi
 
 echo Linking kolmafia.jar from "${latest}"...

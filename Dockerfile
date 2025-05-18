@@ -14,6 +14,9 @@ RUN \
 # add local files
 COPY root/ /
 
+# set executable bit
+RUN chmod +x /custom-cont-init.d/*
+
 # environment variables
 ## fullscreen does not work well with kolmafia
 ENV NO_FULL=1

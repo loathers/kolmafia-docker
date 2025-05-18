@@ -2,6 +2,7 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
+
 # hadoint is a Dockerfile linter written in Haskell
 # that helps you build best practice Docker images.
 # More details at https://github.com/hadolint/hadolint
@@ -10,12 +11,12 @@ name: Hadolint
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
-    - cron: '21 2 * * 0'
+    - cron: "21 2 * * 0"
 
 permissions:
   contents: read
