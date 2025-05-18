@@ -2,7 +2,8 @@
 Run KoLMafia in a container and access via a web interface
 
 ```
-docker run -p 3000:3000 -p 60080:60080 -v /local_path_to_kolmafia_dir:/config/.kolmafia ghcr.io/loathers/kolmafia-docker
+docker pull ghcr.io/loathers/kolmafia-docker
+docker run -p 3000:3000 -p 60080:60080 -v /local_path_to_kolmafia_dir:/config/.kolmafia kolmafia-docker
 ```
 
 * http://localhost:3000
