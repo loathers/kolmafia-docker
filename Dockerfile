@@ -3,7 +3,7 @@ FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine321
 # install packages
 RUN \
   apk add --no-cache \
-    firefox \
+    chromium \
     openjdk21-jre \
     jq \
     wget \
