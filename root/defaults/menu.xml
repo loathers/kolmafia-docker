@@ -6,19 +6,9 @@
                 <command>java -jar /etc/kolmafia/kolmafia.jar</command>
             </action>
         </item>
-        <item label="relay browser">
-            <action name="Execute">
-                <command>/usr/bin/chromium http://localhost:60080/game.php</command>
-            </action>
-        </item>
         <item label="update kolmafia">
             <action name="Execute">
                 <command>/usr/bin/xterm -e /custom-cont-init.d/99-install-kolmafia</command>
-            </action>
-        </item>
-        <item label="browser">
-            <action name="Execute">
-                <command>/usr/bin/chromium</command>
             </action>
         </item>
         <item label="terminal">
