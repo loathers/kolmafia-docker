@@ -22,6 +22,7 @@ RUN chmod +x /custom-cont-init.d/*
 ENV NO_FULL=1
 ENV _JAVA_OPTIONS="-XX:MaxRAMPercentage=80"
 ENV AUTOPOWEROFF=false
+ENV TITLE=KoLmafia
 
 # ports
 ## kolmafia relay browser port
