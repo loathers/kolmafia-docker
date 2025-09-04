@@ -1,5 +1,6 @@
 #!/bin/sh
-java -jar /etc/kolmafia/kolmafia.jar
+
+java -jar /etc/kolmafia/kolmafia.jar $(KOLMAFIA_OPTIONS)
 
 if [ "$AUTOPOWEROFF" = true ]; then
     /usr/bin/sudo poweroff

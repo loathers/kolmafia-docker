@@ -14,12 +14,14 @@ Please see https://github.com/linuxserver/docker-baseimage-kasmvnc for additiona
 
 ## Container Environment
 
-- AUTOPOWEROFF=true (default false): Automatically power off container when exiting kolmafia
-- \_JAVA_OPTIONS= (default "-XX:MaxRAMPercentage=80"): Set java launch options
+- `AUTOPOWEROFF=true` (default false): Automatically power off container when exiting KoLMafia
+- `\_JAVA_OPTIONS=` (default "-XX:MaxRAMPercentage=80"): Set java launch options
+- `KOLMAFIA_OPTIONS=` (default ""): Set KoLMafia launch options for autostart. Does not apply if running from the right-click context menu
 
 ## Mafia Configuration
 
-- relayAllowRemoteAccess=true (default false): Required to connect to published relay browser port
+- `set relayAllowRemoteAccess=true` (default false): Required to connect to published relay browser port
+- `relay nobrowser`: Relay server can be initialized by running this cli command, for example in a login script
 
 ## Known Issues
 
