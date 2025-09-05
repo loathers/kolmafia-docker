@@ -15,7 +15,7 @@ Please see https://github.com/linuxserver/docker-baseimage-kasmvnc for additiona
 ## Container Environment
 
 - `AUTOPOWEROFF=true` (default false): Automatically power off container when exiting KoLMafia
-- `\_JAVA_OPTIONS=` (default "-XX:MaxRAMPercentage=80"): Set java launch options
+- `_JAVA_OPTIONS=` (default "-XX:MaxRAMPercentage=80"): Set java launch options
 - `KOLMAFIA_OPTIONS=` (default ""): Set KoLMafia launch options for autostart. Does not apply if running from the right-click context menu
 
 ## Mafia Configuration
