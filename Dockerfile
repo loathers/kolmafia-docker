@@ -4,9 +4,9 @@ LABEL org.opencontainers.image.authors="rinn"
 # install packages
 RUN \
   apk add --no-cache \
-    openjdk21-jre \
-    jq \
-    wget \
+    openjdk21-jre~21.0 \
+    jq~1.7 \
+    wget~1.25 \
     && \
     rm -rf /tmp/* /var/cache/apk/*
 
