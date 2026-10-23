@@ -1,11 +1,11 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:alpine321
+FROM ghcr.io/linuxserver/baseimage-selkies:alpine324
 LABEL org.opencontainers.image.authors="rinn"
 
 # install packages
 RUN \
   apk add --no-cache \
-    openjdk21-jre~21.0 \
-    jq~1.7 \
+    openjdk25-jre~25.0 \
+    jq~1.8 \
     wget~1.25 \
     && \
     rm -rf /tmp/* /var/cache/apk/*

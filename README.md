@@ -10,7 +10,7 @@ docker run -p 3000:3000 -p 60080:60080 -v /local_path_to_kolmafia_dir:/config/.k
 - Web interface: http://localhost:3000
 - Relay browser: http://localhost:60080/game.php
 
-Please see [linuxserver/docker-baseimage-kasmvnc](https://github.com/linuxserver/docker-baseimage-kasmvnc) for additional docker usage.
+Please see [linuxserver/docker-baseimage-selkies](https://github.com/linuxserver/docker-baseimage-selkies) for additional docker usage.
 
 ## Container Environment
 
