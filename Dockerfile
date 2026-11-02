@@ -20,6 +20,8 @@ RUN chmod +x /custom-cont-init.d/*
 # environment variables
 ## fullscreen does not work well with kolmafia
 ENV NO_FULL=1
+## kolmafia window does not scale correctly with hidpi
+ENV SELKIES_USE_CSS_SCALING=true
 ENV _JAVA_OPTIONS="-XX:MaxRAMPercentage=80"
 ENV AUTOPOWEROFF=false
 ENV TITLE=KoLmafia
